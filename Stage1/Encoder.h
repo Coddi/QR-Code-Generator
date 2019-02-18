@@ -7,8 +7,10 @@ class Encoder
 public:
 	Encoder(char* in);
 	~Encoder();
+	int eorr;
 	std::vector<bool> bitArray;
 private:
+	char sempl[46] = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ $%*+-./:";
 	std::map<char, int> tab1 = { {'0',0},
 								{'1',1},
 								{'2',2},
