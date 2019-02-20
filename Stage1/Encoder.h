@@ -8,11 +8,16 @@ class Encoder
 public:
 	Encoder(std::string in);
 	~Encoder();
+	//0 - if there are no errors.
+	//Other values - there are errors
 	int eorr;
 	std::vector<bool> bitArray;
 private:
-	void toUpper(std::string &s); //преобразование строки в врехний регистр
+	// convert the string to upper case
+	void toUpper(std::string &s); 
+	//List of valid characters
 	char sempl[46] = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ $%*+-./:";
+	//List of valid characters and their codes
 	std::map<char, int> tab1 = { {'0',0},
 								{'1',1},
 								{'2',2},
