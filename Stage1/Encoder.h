@@ -2,14 +2,16 @@
 #include <vector>
 #include <map>
 #include <cctype>    
+#include <string.h>
 class Encoder
 {
 public:
-	Encoder(char* in);
+	Encoder(std::string in);
 	~Encoder();
 	int eorr;
 	std::vector<bool> bitArray;
 private:
+	void toUpper(std::string &s); //преобразование строки в врехний регистр
 	char sempl[46] = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ $%*+-./:";
 	std::map<char, int> tab1 = { {'0',0},
 								{'1',1},
